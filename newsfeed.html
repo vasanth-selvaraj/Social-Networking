@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+
+#feed{
+    width : 500px;
+    margin : auto;
+    padding: 6px;
+    border : 1px solid purple;
+}
+#pre_box{
+    width : 500px;
+    margin : auto;
+    padding: 6px;
+    border: 1px solid lime;
+    margin-bottom: 2px;
+}
+#status_error{color : red;}
+#status_box{width : 100%;height: 50px; resize: none;}
+#loader{
+    font-size: 20px;text-align: center;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function(){
+            $("#loader").hide();
+            $("#feed").load("newsfeed.php");
+        });
+        </script>
+    
+        
+<ul>
+  <li><a class="active" ><span class="glyphicon glyphicon-list-alt"></span> News Feed</a></li>
+  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+  <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Login</a></li>
+</ul>
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+<div id="pre_box">
+    <div id="status_error"></div>
+        <textarea id="status_box" placeholder="Write your post here..."></textarea>
+        <button id="status_btn">post</button>
+</div>
+    <div id="feed">
+       <div id="loader">loading...</div>
+   </div>
+   
+   <script src="post_status.js"></script>
+    
+  
+  
+</div>
+</body>
+</html>
+
